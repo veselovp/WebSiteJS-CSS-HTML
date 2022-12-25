@@ -1,12 +1,10 @@
-// import gulpPlumber from "gulp-plumber"
-// import { path } from "../config/path"
+import gulpPlumber from "gulp-plumber"
 
 
 
-// export const json = () => {
-//     return app.path.src(app.path.src.json)
-//         .pipe(gulpPlumber)
-// 		.pipe(app.path.dest(app.path.build.json))
-// }
+export const json = () => {
+    return app.gulp.src(app.path.src.json)
+        .pipe(app.gulp.dest(app.path.build.json))
+}
 
 

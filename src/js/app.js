@@ -96,4 +96,3 @@ var swiper = new Swiper(".mySwiper", {
 
 // zagruzka productov
 
-async function get 
