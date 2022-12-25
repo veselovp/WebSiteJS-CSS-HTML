@@ -872,7 +872,7 @@ body {
 }
 .tovar__items {
   display: flex;
-  gap: 33px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 .tovar__item {
