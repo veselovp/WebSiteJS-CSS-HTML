@@ -1,0 +1,372 @@
+@use "sass:math";
+
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 40px;
+
+    &__wrapper {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 50;
+    }
+
+    &__container {
+        max-width: 1240px;
+        margin: 0px auto;
+        // @include adaptiv-value('padding', 50, 1, 1);
+
+        
+
+    }
+
+    &__body {
+		transition: min-height 0.3s ease 0s;
+		display: flex;
+		align-items: center;
+		padding: 5px 0;
+		min-height: 125px;
+		position: relative;
+		@media (max-width: 767px) {
+			min-height: 80px;
+		}
+		@media (max-width: 767px) {
+			min-height: 50px;
+		}
+    }
+
+    &__main {
+        align-items: center;
+        display: flex;
+        // sdelatj adaptivnoje rashirenije 
+		flex: 1 0 math.div(494, 1240) * 100%;
+    }
+
+    &__logo {
+		color: #000;
+		font-weight: 700;
+		font-size: 24px;
+		position: relative;
+		z-index: 5;
+		line-height: math.div(29, 24) * 100%;
+    }
+
+
+
+    &__menu {
+
+    }
+// delajem ikonku poiska , i delajem chtobi ona rashiralasj na ekranah vishe 991px i pribivala kontent spravo  
+    &__search {
+        @media (min-width: 991px) {
+            flex: 1 1 auto;
+        }
+    }
+    &__action {
+    }
+}
+.container {
+
+}
+
+.menu {
+    flex: 0 1 420px;
+    // vipadajusheje menju iz burgera ( specialjnij div pod burger) 
+    &__body {
+		@media (max-width: 768px) {
+			position: fixed;
+			width: 100%;
+			overflow: auto;
+			top: 0;
+			left: -100%;
+			background-color: #fcf8f3;
+			transition: left 0.3s ease 0s;
+			padding: 70px 15px 30px 15px;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: 50px;
+				top: 0;
+				left: -100%;
+				transition: left 0.3s ease 0s;
+				background-color: #fcf8f3;
+				z-index: 2;
+			}
+			&.burger {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+    }
+// vistavlaju samo menju 
+    &__list {
+        @media (max-width:991px) {
+            flex: 0 1 auto;
+        }
+        @media (min-width:768px) {
+            display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+        }
+
+    }
+// vistavlaju vipadajuweje menju i strelku 
+    &__item {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 0px 3px;
+        padding: 5px 0px;
+        // navedenije mishkoj chtobi otkrivalosj
+        @media (any-hover: hover) {
+            &:hover {
+                .menu__sub-list {
+                    opacity: 1;
+                    visibility: visible;
+                    // pomogajet izbezatj mesta gde pustota mezdu elementami 
+                    pointer-events: auto;
+                }
+                // menajem napravlenije strelochki
+                .menu__arrow {
+                    transform: rotate(180deg);
+                }
+                // podsvechivajet vsjo 
+                .menu__link {
+                    color: red;
+                }
+            }
+        }
+        // delaju chtobi otkrivalosj pri nazatii na strelku na tachskrine(pojavlajetsja 'open' i premenaju vse teze stili chto i na navedenije 
+        @media (min-width:768px) {
+            &.open {
+                .menu__sub-list {
+                    opacity: 1;
+                    visibility: visible;
+                    // pomogajet izbezatj mesta gde pustota mezdu elementami 
+                    pointer-events: auto;
+                }
+                // menajem napravlenije strelochki
+                .menu__arrow {
+                    transform: rotate(180deg);
+                }
+                // podsvechivajet vsjo 
+                .menu__link {
+                    color: red;
+                }
+            }
+        }
+        @media (max-width:768px) {
+            &.open {
+                .menu__sub-list {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__link {
+        // stili menju navigaciji 
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #3A3A3A;
+    }
+    &__arrow {
+        background-color: white;
+        margin-left: 5px;
+    }
+// nastraivaju podmenju
+    &__sub-list {
+        position: relative;
+        padding: 15px;
+        flex: 1 1 100%;
+        @media (min-width:768px) {
+            // skrivajet elementi snacalo
+            opacity: 0;
+            visibility: 0;
+            transition: all 0.3s esse 0s;
+            // nastraivajet skritie elementi
+            min-width: 200px;
+            left: 0;
+            position: absolute;
+            pointer-events: none;
+            top: 100%;
+        }
+    }
+    &__sub-item {
+    }
+    &__sub-link {
+    }
+}
+.icon-angle-down {
+}
+// POISK
+.search-form {
+    max-width: 473px;
+    &.dlinna {
+        .search-form__item {
+			opacity: 1;
+			top: 100%;
+			visibility: visible;
+		}
+		.search-form__icon {
+			color: orange;
+		}
+    }
+
+
+    &__icon {
+        // ikonka kotoraja pojavlajetsja kogda ekran menjwe 
+        position: relative;
+		z-index: 5;
+		font-size: 22px;
+		color: #262f56;
+        margin: 0px 20px;
+		@media (min-width: 991px) {
+			display: none;
+		}
+    }
+// vipadajusheje menju poiska pri razmere menjwee 991px
+    &__item {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        @media (max-width: 991px) {
+			box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: -100%;
+			z-index: 5;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease 0s;
+		}
+    }
+
+    // knopka 
+    &__btn {
+		flex: 0 0 45px;
+		height: 45px;
+		font-size: 15px;
+		color: #333333;
+    }
+    // vvosnije ddanije inputa
+    &__inpute {
+
+		font-size: 14px;
+		width: 100%;
+		padding: 0px 20px 0px 0px;
+		color: grey;
+    }
+}
+
+// poslednim delaju ikonki spravo i vistavalju cherez grid 
+.action-header {
+    position: relative;
+    z-index: 500;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    gap: 20px;
+    &__item {
+        &_favorite {
+            // butilku verstaju
+            color: #262F56;
+            font-size: 24px;
+            transition: color 0.3s esse 0s;
+            &:hover {
+                color: orange;
+            }
+        }
+        &_user {
+            // jebalo verstaju
+            color: #262F56;
+            font-size: 24px;
+            transition: color 0.3s esse 0s;
+            &:hover {
+                color: orange;
+            }
+        }
+    }
+}
+.icon-bottle-droplet {
+}
+.icon-bag-shopping {
+}
+// nastraivajem ikonku burgera
+.icon-menu {
+    display: none;
+    @media (max-width:768px) {
+        display: flex;
+        width: 30px;
+        height: 18px;
+        position: relative;
+        margin: 20px;
+        z-index: 5;
+        cursor: pointer;
+                    span {
+            position: absolute;
+            background-color: #262F56;
+            top: calc(50% - 1px);
+            width: 100%;
+            height: 2px;
+            transition: all 0.2s;
+            &:first-child {
+                top: 0;
+            }
+            &:last-child {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.cart-header {
+
+    &__icon {
+        // korzinu verstaju 
+        color: #262F56;
+        font-size: 24px;
+        transition: color 0.3s esse 0s;
+        &:hover {
+            color: orange;
+        }
+        // verstaju kruzchochek nad magazinom
+        span {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: orange;
+            color: white;
+            font-size: 12px;
+            top: -10px;
+            right: 35px;
+        }
+    }
+
+    &__body {
+    }
+
+    &__list {
+    }
+}
+.icon-circle-radiation {
+}
+.cart-list {
+}

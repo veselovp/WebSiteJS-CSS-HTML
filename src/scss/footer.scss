@@ -1,0 +1,199 @@
+.footer {
+
+    &__contaier {
+        max-width: 1240px;
+        margin: 0px auto;
+        
+
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        padding-top: 80px;
+        padding-bottom: 50px;
+            // dvigajem levij MAIN naverh pri ekrane < 1080px
+        @media (max-width:1080px){
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 290px;
+        }
+        @media (max-width:991px) {
+            display: block;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+            // dvigajem levij MAIN naverh pri ekrane < 991px
+        @media (max-width:1080px){
+            grid-column: span 2;
+        }
+    }
+
+    &__title {
+        
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #616161;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    &__location {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #616161;
+    }
+
+    &__number {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #616161;
+    }
+
+    &__website {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #616161;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-evenly;
+        @media (max-width:767px) {
+            display: block;
+        }
+
+    }
+
+    &__search {
+    }
+}
+.container {
+
+}
+.item {
+}
+.icon-location {
+}
+.icon-number {
+}
+.icon-web {
+}
+.menu-footer {
+
+    &__columns {
+        // vipadajusheje menju spojler
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        @media (max-width:767px) {
+            &.open {
+                .menu-footer__list {
+                    opacity: 100;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    &__title {
+        background-color: white;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        position: relative;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (max-width:768px) {
+            // skrivajet elementi snacalo
+            opacity: 0;
+            transition: all 1s esse 0s;
+            // nastraivajet skritie elementi
+            min-width: 200px;
+            position: absolute;
+            pointer-events: none;
+            
+        }
+    }
+
+    &__item {
+        
+    }
+
+    &__link {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #616161;
+    }
+}
+
+
+.search-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    &__title {
+        background-color: white;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+    }
+
+    &__item {
+        display: flex;
+        width: 100%;
+    }
+
+    &__inpute-footer {
+        background-color: #C4C4C4;
+        width: 100%;
+        display: flex;
+        height: 45px;
+        background: #F4F5F7;
+    }
+
+    &__btn {
+        width: 46px;
+        height: 45px;
+        background: #E89F71;
+    }
+}
+
+

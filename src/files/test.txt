@@ -1,0 +1,32 @@
+<div class="info">
+    <div class="info_">
+        <div class="info__body">
+            <div class="body__top">
+                <div class="body__list">
+                    <h1 class="main__title">Intellectual Property has the Shelf Life </h1>
+                    <p class="main__tekst">of a Banana.</p>
+                    <button type="submit" class="button-coomon">Become a member</button>
+                </div>
+            </div>
+            <div class="body__bottom">
+                <div class="body__pic">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="../img/nature-1.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../img/nature-2.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../img/nature-3.jpg" />
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
