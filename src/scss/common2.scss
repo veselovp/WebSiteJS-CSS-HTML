@@ -1,0 +1,58 @@
+.common {
+  background: #a96a1e;
+  @media (min-width: 991px) {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f9f1e7 70%, #fcf8f3 30%);
+  }
+  &__wrapper {
+  }
+
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__cart-left {
+  }
+}
+.container {
+}
+.left-cart {
+  &__body {
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__bottom {
+  }
+
+  &__btn {
+  }
+}
+.button {
+}
+.slider {
+}
+.first {
+}
+.slider-main {
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__price {
+  }
+}
+.icon-angle-right {
+}

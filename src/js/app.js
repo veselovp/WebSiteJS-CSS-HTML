@@ -77,23 +77,3 @@ document.querySelectorAll('.splr').forEach((e) => {
 })
 
 
-// swiper
-
-
-var swiper = new Swiper(".mySwiper", {
-	spaceBetween: 30,
-	effect: "fade",
-	navigation: {
-		nextEl: ".swiper-button-next2",
-		prevEl: ".swiper-button-prev2",
-	},
-	pagination: {
-		el: ".swiper-pagination",
-		clickable: true,
-	},
-});
-	
-
-// zagruzka productov
-
-async function get 
